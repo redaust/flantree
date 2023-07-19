@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+        sessions: 'users/sessions',
+        registrations: 'users/registrations'
+      }
+
   get 'dashboard', to: "dashboard#index"
+  get 'appearance', to: "dashboard#appearance"
   root 'dashboard#index'
 
 # Allows usage of user_path(user) to get URL for a user's profile page.
