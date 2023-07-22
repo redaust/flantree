@@ -4,6 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_one_attached :avatar
+  has_many :links, dependent: :destroy
+
+  after_create :create_default_links
+  after_update :create_default_links
 
   validates :full_name, length: { maximum: 40 }
   validates :body, length: { maximum: 80 }
@@ -15,4 +19,10 @@ class User < ApplicationRecord
 
     errors.add(:username, "is restricted") if restricted_username_list.include?(username)
   end
+
+  private
+
+  def create_default_links
+    Link.create(user: self, title: '', url: '') while links.count < 5
+end
 end
