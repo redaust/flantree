@@ -79,6 +79,7 @@ text-align: center;
     height: 100vh;
     background: rgb(255,254,53);
     background: linear-gradient(0deg, rgba(255,254,53,1) 0%, rgba(255,255,255,1) 92%);
+    overflow-x: hidden;
 }
 
 .notice {
@@ -97,4 +98,11 @@ text-align: center;
     padding: 0px !important;
     margin: 0px !important;
     border: none !important;
+}
+
+.preview-frame {
+    width: 414px;
+    height: 736px;
+    border: 2px solid #000;
+    border-radius: 5%
 }
