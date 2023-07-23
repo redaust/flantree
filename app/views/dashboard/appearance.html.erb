@@ -40,6 +40,10 @@
                 <div class="col-4">
                 <%= f.submit "Update avatar", class:"btn btn-dark" %>
                 </div>
+
+                <div class="col-6">
+                    <h6>My FlanTree Link: <%= link_to url_for([current_user, { only_path: false}]), user_path(current_user) %></h6>
+                </div>
  	 </div>
     </div>
  <% end %>
