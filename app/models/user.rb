@@ -14,6 +14,7 @@ class User < ApplicationRecord
   validate :valid_username
 
   def valid_username
+    errors.add(:username, "is already taken") if User.where(username:).where.not(id:).exists?
 
     restricted_username_list = %[admin root dashboard analytics appearance settings preferences calendar]
 

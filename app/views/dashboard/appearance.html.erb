@@ -6,8 +6,7 @@
         </div>
             <center>
                     <div class="col-6">
-                        <h6>My FlanTree Link: <%= link_to url_for([current_user, { only_path: false}]), user_path(current_user) %></h6>
-                        <%= content_tag(:iframe,"", src: user_path(current_user), title: "Preview", class:"preview-frame") %>
+                        <%= render partial: 'dashboard/preview' %>
                     </div>
             </center>
  	 </div>
