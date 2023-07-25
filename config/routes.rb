@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
+  get 'analytics/show'
   patch 'links/:id' => 'links#update', as: :links
   devise_for :users, controllers: {
         sessions: 'users/sessions',
         registrations: 'users/registrations'
       }
-
+  get 'analytics', to: "analytics#show"
   get 'dashboard', to: "dashboard#index"
   get 'appearance', to: "dashboard#appearance"
   root 'dashboard#index'
