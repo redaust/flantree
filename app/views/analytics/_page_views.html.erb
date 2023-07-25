@@ -1,7 +1,13 @@
 <div class="col-2"> </div>
 <div class="col-8">
 
-	<div class="container" style="background: blanchedalmond;height: 50vh;">
+	<div class="container" style="background: seashell;height: 50vh;">
+		<%= line_chart [
+			{
+			name: "Users", type: "column", data: User.group_by_day(:created_at).count
+			}, {
+				name: "Links", type: "area", data: User.group_by_day(:created_at).count
+			}] %>
 
 
 
