@@ -21,6 +21,12 @@ class User < ApplicationRecord
     errors.add(:username, "is restricted") if restricted_username_list.include?(username)
   end
 
+  def get_daily_profile_views
+    daily_views = Ahoy::Event.where("json_extract(properties, '$.user.id') LIKE '#{id}'")
+                             .where(name: 'Viewed Dashboard')
+    daily_views.group_by_day(:time).count
+  end
+
   private
 
   def create_default_links

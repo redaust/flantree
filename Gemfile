@@ -80,3 +80,5 @@ gem "simple_form"
 gem "apexcharts", "~> 0.2.0"
 
 gem "groupdate", "~> 6.3"
+
+gem "ahoy_matey", "~> 4.2"

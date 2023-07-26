@@ -16,6 +16,7 @@ class DashboardController < ApplicationController
 
 
     @links = @user.links.where.not(url: '', title: '')
+    ahoy.track "Viewed Dashboard", user: @user
 
    end
 
