@@ -33,6 +33,8 @@ class User < ApplicationRecord
     daily_link_clicks.group_by_day(:time).count
     end
 
+
+
   private
 
   def create_default_links
