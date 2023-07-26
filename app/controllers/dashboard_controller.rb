@@ -10,6 +10,10 @@ class DashboardController < ApplicationController
     @should_render_navbar = true
    end
 
+   def donate
+    @should_render_navbar = true
+  end
+
 
   def show
     redirect_to dashboard_path if @user.nil?
